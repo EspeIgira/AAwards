@@ -10,3 +10,14 @@ Popular photo / Instagram Clone Application
   
   Browser and text editor.
 
+## Technologies Used
+  
+ . HTML Language 
+
+ . Django 1.11
+ 
+ . Python 3.6
+
+ . Bootstrap 
+  
+ . CSS Stylesheet
