@@ -1,8 +1,9 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
+# # -*- coding: utf-8 -*-
+# from __future__ import unicode_literals
 
 from django.shortcuts import render
+from django.http  import HttpResponse
 
 
 def instagram(request):
-    return render(request, 'instagram.html')
+    return HttpResponse('Instagram Clone _Welcome')
