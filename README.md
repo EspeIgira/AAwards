@@ -25,3 +25,10 @@ Popular photo / Instagram Clone Application
 ## Contact information
 
    Telephone number (+250)788556167 or Email espeigira@gamil.com
+
+## Authors
+
+* **EspeIgira** - *Initial work* - [EspeIgira](https://github.com/EspeIgira/)
+
+
+
