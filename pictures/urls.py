@@ -8,6 +8,7 @@ urlpatterns=[
     url('^$',views.instagram,name = 'instagram'),
     url(r'^$',views.pictures_of_day,name='picturesToday'),
     url(r'^picture/(\d+)',views.picture,name ='picture'),
+    url(r'^new/picture$', views.newpicture, name='newpicture')
    
 
 ]
