@@ -14,9 +14,13 @@
      <p>{{picture.name}}</p>
    </div> 
 
-   <div class="row">
-      <p>{{picture.post}}</p>
-    </div>
+
+    <div class="row">
+        {% autoescape on %}
+        {{picture.post| safe}}
+       {% endautoescape %}
+   
+      </div>
  
    <div class="row">
      <p>Posted {{picture.pub_date|timesince}} by {{picture.picture.name}}</p>
@@ -27,5 +31,5 @@
 
  {% endblock %}
 
- 
+
  
