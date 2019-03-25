@@ -4,6 +4,7 @@
 from django.shortcuts import render,redirect
 from django.http  import HttpResponse,Http404
 from .forms import SignUpForm
+from django.contrib.auth.decorators import login_required.
 
 
 # def instagram(request):
