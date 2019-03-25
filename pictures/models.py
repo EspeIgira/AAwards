@@ -100,3 +100,8 @@ class Comment(models.Model):
     def delete_comment(self):
         self.delete()
 
+
+class SignUpRecipients(models.Model):
+    name = models.CharField(max_length = 30)
+    
+    email = models.EmailField()

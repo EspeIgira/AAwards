@@ -22,10 +22,9 @@ def pictures_of_day(request):
         if form.is_valid():
             print('valid')
     else:
-        form = NewsLetterForm()
-    return render(request, 'all-news/today-news.html', {"date": date,"news":news,"letterForm":form})
-
-    return render(request, 'all-pictures/todays_pictures.html', {"date": date,"pictures":pictures,"letterForm":form})
+        form = SignUpForm()
+  
+    return render(request, 'all-pictures/todays_pictures.html', {"date": date,"pictures":pictures,"signupForm":form})
 
 
 def picture(request,picture_id):

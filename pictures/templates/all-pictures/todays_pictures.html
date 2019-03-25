@@ -4,6 +4,18 @@
 
 <div class="container">
 
+  <!-- Looping through   -->
+  <div class="container-fluid">
+
+    <form  action="{%url 'picturesToday'%}" method="post">
+      {%csrf_token%}
+  
+      {% bootstrap_form signupForm layout='inline' %}
+      <input type="submit" value="Submit">
+    </form>
+  
+  </div>
+
   {% for picture in pictures %}
 
   <div class="row text">
