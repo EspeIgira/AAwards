@@ -7,6 +7,7 @@ from django.conf.urls.static import static
 urlpatterns=[
     url('^$',views.instagram,name = 'instagram'),
     url(r'^$',views.pictures_of_day,name='picturesToday'),
+    url(r'^picture/(\d+)',views.picture,name ='picture'),
    
 
 ]
