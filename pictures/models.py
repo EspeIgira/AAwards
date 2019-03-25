@@ -7,9 +7,14 @@ from django.db import models
 class Picture(models.Model):
     
     name = models.CharField(max_length =30)
-    # picture_Main_pic = models.PictureField(upload_to='instagram/') 
+    picture_Main_pic = models.ImageField(upload_to='instagram/',null=True) 
     like = models.IntegerField(default=0)
+    pub_date = models.DateTimeField(auto_now_add=True,null=True)
     # profile = models.ForeignKey(Profile, null=True, blank=True)
+
+
+    
+
 
     def __str__(self):
         return self.name
