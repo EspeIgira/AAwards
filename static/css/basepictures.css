@@ -19,5 +19,15 @@ body h1{
   border-radius:20px;
   border:1px solid whitesmoke;
 }
+div h3{
+  background-color:rgb(204, 102, 153);
+  padding:20px; 
+}
+
+.sign{
+  border-radius:15px;
+  border:1px solid whitesmoke;
+ 
+}
 
 
