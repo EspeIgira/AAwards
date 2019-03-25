@@ -18,9 +18,7 @@ def instagram(request):
 
 
 def pictures_of_day(request):
-    date = dt.date.today()
-    pictures = Picture.objects.all()
-
+    
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
@@ -33,7 +31,7 @@ def pictures_of_day(request):
     else:
         form = SignUpForm()
   
-    return render(request, 'all-pictures/todays_pictures.html', {"date": date,"pictures":pictures,"signupForm":form})
+    return render(request, 'all-pictures/instagram.html', {"date": date,"pictures":pictures,"signupForm":form})
 
 
 
@@ -47,7 +45,7 @@ def picture(request,picture_id):
 
 
 @login_required(login_url='/accounts/login/')
-def newprofile(request):
+def newpicture(request):
     current_user = request.user
     if request.method == 'POST':
         form = ProfileForm(request.POST, request.FILES)
