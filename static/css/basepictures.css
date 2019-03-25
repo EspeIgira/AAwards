@@ -27,7 +27,8 @@ div h3{
 .sign{
   border-radius:15px;
   border:1px solid whitesmoke;
- 
+  margin-left:-30px;
+  color:whitesmoke;
 }
 
 

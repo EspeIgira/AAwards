@@ -36,12 +36,3 @@ def picture(request,picture_id):
         raise Http404()
     return render(request,"all-pictures/pictures.html", {"picture":picture})
 
-
-@login_required(login_url='/accounts/login/')
-def newuser(request, newuser_id):
-
-    try:
-        newuser = Article.objects.get(id = newuser_id)
-    except DoesNotExist:
-        raise Http404()
-    return render(request,"all-pictures/article.html", {"article":article})
