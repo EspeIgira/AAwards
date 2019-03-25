@@ -34,3 +34,7 @@ def picture(request,picture_id):
     except DoesNotExist:
         raise Http404()
     return render(request,"all-pictures/pictures.html", {"picture":picture})
+
+
+@login_required(login_url='/accounts/login/')
+def newuser(request, newuser_id):
