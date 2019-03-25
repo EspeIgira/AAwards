@@ -4,12 +4,13 @@
 from django.shortcuts import render,redirect
 from django.http  import HttpResponse,Http404
 from .forms import SignUpForm
-from django.contrib.auth.decorators import login_required.
+from django.contrib.auth.decorators import login_required
 
 
 # def instagram(request):
 #     return HttpResponse('Instagram Clone _Welcome')
 
+@login_required(login_url='/accounts/login/')
 def instagram(request):
     return render(request, 'instagram.html')
 
@@ -38,3 +39,9 @@ def picture(request,picture_id):
 
 @login_required(login_url='/accounts/login/')
 def newuser(request, newuser_id):
+
+    try:
+        newuser = Article.objects.get(id = newuser_id)
+    except DoesNotExist:
+        raise Http404()
+    return render(request,"all-pictures/article.html", {"article":article})

@@ -12,5 +12,12 @@ body h1{
   margin-right:750px;
   
 }
+.sign{
+  background-color:rgb(204, 102, 153);
+}
+.panel{
+  border-radius:20px;
+  border:1px solid whitesmoke;
+}
 
 
