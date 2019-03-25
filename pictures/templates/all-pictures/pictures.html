@@ -1,0 +1,27 @@
+{%extends 'all-pictures/base.html'%}
+
+ {% block content %}
+
+ <div class="container">
+    
+   <div class="row" class="click">
+      <img src="{{ picture.picture_Main_pic.url }}" class="pic-responsive pic border-radius:15px;" alt="Picture" width="500" height="500">
+   
+
+   </div>
+  
+
+   
+   <!-- <div class="row">
+     <p>{{picture.name}}</p>
+   </div> 
+ 
+   <div class="row">
+     <p>Posted {{image.pub_date|timesince}} by {{image.image.name}}</p>
+     
+   </div> -->
+
+</div>
+
+ {% endblock %}
+ 

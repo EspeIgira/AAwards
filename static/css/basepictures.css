@@ -1,4 +1,16 @@
 h1
 {
-  color: green;
+  color: white;
 }
+body{
+  background-color:rgb(204, 102, 153);
+}
+body h1{
+  border-radius:15px;
+  border:1px solid whitesmoke;
+  margin-left:750px;
+  margin-right:750px;
+  
+}
+
+
