@@ -11,8 +11,11 @@ class Picture(models.Model):
     name = models.CharField(max_length =30)
     picture_Main_pic = models.ImageField(upload_to='instagram/',null=True) 
     like = models.IntegerField(default=0)
-    
+    comments = models.CharField(max_length =60)
+    caption = models.CharField(max_length =300)
     # profile = models.ForeignKey(Profile, null=True, blank=True)
+    # user = models.ForeignKey(User,on_delete=models.CASCADE)
+
 
 
 
@@ -44,8 +47,7 @@ class Profile(models.Model):
     picture_Main_pic = models.ImageField(upload_to='instagram/', blank=True) 
     # bio = models.CharField(max_length =300)
     bio = HTMLField()
-    user = models.ForeignKey(User,on_delete=models.CASCADE)
-  
+    
 
     def __str__(self):
         return self.name
