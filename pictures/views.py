@@ -15,8 +15,9 @@ from .models import Picture, Profile
 def instagram(request):
     
     pictures = Picture.objects.all()
-    print(pictures)
-    return render(request, 'instagram.html',{'pictures':pictures})
+    profile = Profile.objects.all()
+    print(profile)
+    return render(request, 'instagram.html',{'pictures':pictures,"profile":profile})
 
 @login_required(login_url='/accounts/login/')
 def pictures_of_day(request):
@@ -37,10 +38,8 @@ def pictures_of_day(request):
 
 
 def picture(request,picture_id):
-    try:
-        picture = Picture.objects.get(id = picture_id)
-    except DoesNotExist:
-        raise Http404()
+    picture = Picture.objects.get(id = picture_id)
+    
     return render(request,"all-pictures/pictures.html", {"picture":picture})
 
 
@@ -52,15 +51,13 @@ def newpicture(request):
         form = PictureForm(request.POST, request.FILES)
         if form.is_valid():
             picture = form.save(commit=False)
-            picture.profile = current_user
+            picture.user = current_user
             picture.save()
         return redirect('picturesToday')
 
     else:
         form = PictureForm()
-    return render(request, 'profile.html', {"form": form})
-
-
+    return render(request, 'picture.html', {"form": form})
 
 
 @login_required(login_url='/accounts/login/')
@@ -71,9 +68,6 @@ def newprofile(request):
         if form.is_valid():
             profile = form.save(commit=False)
             profile.user = current_user
-            profile.name=form.cleaned_data['name']
-            profile.bio=form.cleaned_data['bio']
-            profile.picture = form.cleaned_data['picture_Main_pic']
             profile.save()
         return redirect('picturesToday')
 
@@ -88,7 +82,9 @@ def profile_view(request):
 
     current_user = request.user
     current_user.id
-    profile = Profile.objects.all()
+    profile = Profile.objects.get(user=current_user.id)
+    
+    print(profile.name)
     return render(request, 'profile_view.html',{"profile":profile})
 
 

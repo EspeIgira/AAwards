@@ -32,7 +32,7 @@ div h3{
 }
 .profile{
   border-radius:15px;
-  border:1px solid whitesmoke;
+  /* border:1px solid whitesmoke; */
   margin-left:400px;
   margin-right:400px; 
 }
