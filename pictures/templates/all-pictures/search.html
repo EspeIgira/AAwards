@@ -3,18 +3,18 @@
 <div class="container">
 
   <div class="row">
-    {% if categories%}
-    <h2>Found {{ categories|length }} of searched term {{message}}</h2><br> 
+    {% if pictures%}
+    <h2>Found {{ pictures|length }} of searched term {{message}}</h2><br> 
     {% else %}
-    <h2> Found 0 categories for the search term {{message}}</h2> 
+    <h2> Found 0 pictures for the search term {{message}}</h2> 
     {% endif %}
 
   </div>
 
   <div class="row">
 
-  {% if categories %}
-    {% for picture in categories %}
+  {% if pictures %}
+    {% for picture in pictures %}
       <div class="col-sm-6 col-md-3 search text-center" >
           <h1>{{picture.name}}</h1>
           

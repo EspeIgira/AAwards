@@ -5,17 +5,18 @@
  <div class="container">
     
    <div class="row" class="click">
-      <img src="{{ picture.picture_Main_pic.url }}" class="pic-responsive pic border-radius:15px;" alt="Picture" width="500" height="500">
+      <img src="{{ profile.picture_Main_pic.url }}" class="picture-responsive picture border-radius:15px;" alt="Picture" width="500" height="500">
    
 
    </div>
   
    <div class="row">
      <p>{{picture.name}}</p>
+     <p>{{picture.bio}}</p>
    </div> 
 
 
-    <div class="row">
+    <!-- <div class="row">
         {% autoescape on %}
         {{picture.post| safe}}
        {% endautoescape %}
@@ -24,12 +25,17 @@
  
    <div class="row">
      <p>Posted {{picture.pub_date|timesince}} by {{picture.picture.name}}</p>
-     
+      -->
    </div>
 
 </div>
 
  {% endblock %}
-
-
  
+  
+  
+
+
+
+
+

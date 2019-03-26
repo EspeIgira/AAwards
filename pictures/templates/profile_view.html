@@ -1,0 +1,19 @@
+{%extends 'all-pictures/base.html'%}
+
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="profile">
+<div class="container">
+
+  <div class="row">
+    <h1 class='text-center'><br><i class="fa fa-instagram" style="font-size:48px;color:yellow"></i><br><br>Profile view</h1>
+    <h2 class="text-center">{{picture.name}}</h2><br>
+    <h2 class="text-center">{{picture.bio}}</h2><br>
+    <div class="row">
+        <center><img src="{{ picture.picture_Main_pic.url }}" style="border-radius:15px;" class="pic-responsive pic" alt="Picture" width="400" height="400"><br></center>
+    </div>
+  </div>
+</div>
+</div>
+
+{% endblock %}

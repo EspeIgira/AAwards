@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Profile</title>
+  <title>New Profile</title>
   {{form.media}}
 
 {% block styles %} 
@@ -17,9 +17,10 @@
 
 </head>
 
-<body class="post">
+<body >
+  {% include "navbar.html" %}
 
-  <form  class="post" action="{%url 'newpicture'%}" method="post" enctype="multipart/form-data">
+  <form   action="{%url 'newpicture'%}" method="post" enctype="multipart/form-data">
     {%csrf_token%}
 
     {% bootstrap_form form%}
@@ -34,3 +35,5 @@
 </body>
 
 </html>
+
+

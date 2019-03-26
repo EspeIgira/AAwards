@@ -8,8 +8,8 @@ body{
 body h1{
   border-radius:15px;
   border:1px solid whitesmoke;
-  margin-left:750px;
-  margin-right:750px;
+  /* margin-left:1000px;
+  margin-right:1000px; */
   
 }
 .sign{
@@ -30,5 +30,16 @@ div h3{
   margin-left:-30px;
   color:whitesmoke;
 }
+.profile{
+  border-radius:15px;
+  border:1px solid whitesmoke;
+  margin-left:400px;
+  margin-right:400px; 
+}
 
-
+.posts{
+  color:whitesmoke;
+}
+.addpost{
+  background-color:rgb(204, 102, 153);
+}

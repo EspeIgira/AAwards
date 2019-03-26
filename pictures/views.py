@@ -3,10 +3,9 @@
 
 from django.shortcuts import render,redirect
 from django.http  import HttpResponse,Http404,HttpResponseRedirect
-from .forms import SignUpForm
 from django.contrib.auth.decorators import login_required
-from .forms import ProfileForm, SignUpForm
-
+from .forms import PictureForm,ProfileForm, SignUpForm
+from .models import Picture, Profile
 
 
 # def instagram(request):
@@ -14,9 +13,12 @@ from .forms import ProfileForm, SignUpForm
 
 @login_required(login_url='/accounts/login/')
 def instagram(request):
-    return render(request, 'instagram.html')
+    
+    pictures = Picture.objects.all()
+    print(pictures)
+    return render(request, 'instagram.html',{'pictures':pictures})
 
-
+@login_required(login_url='/accounts/login/')
 def pictures_of_day(request):
     
     if request.method == 'POST':
@@ -31,9 +33,7 @@ def pictures_of_day(request):
     else:
         form = SignUpForm()
   
-    return render(request, 'all-pictures/instagram.html', {"date": date,"pictures":pictures,"signupForm":form})
-
-
+    return render(request, 'all-pictures/todays_pictures.html', {"date": date,"pictures":pictures,"signupForm":form})
 
 
 def picture(request,picture_id):
@@ -41,32 +41,75 @@ def picture(request,picture_id):
         picture = Picture.objects.get(id = picture_id)
     except DoesNotExist:
         raise Http404()
-    return render(request,"all-pictures/instagram.html", {"picture":picture})
+    return render(request,"all-pictures/pictures.html", {"picture":picture})
+
 
 
 @login_required(login_url='/accounts/login/')
 def newpicture(request):
     current_user = request.user
     if request.method == 'POST':
-        form = ProfileForm(request.POST, request.FILES)
+        form = PictureForm(request.POST, request.FILES)
         if form.is_valid():
             picture = form.save(commit=False)
-            picture.user = current_user
+            picture.profile = current_user
             picture.save()
+        return redirect('picturesToday')
+
+    else:
+        form = PictureForm()
+    return render(request, 'profile.html', {"form": form})
+
+
+
+
+@login_required(login_url='/accounts/login/')
+def newprofile(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.user = current_user
+            profile.name=form.cleaned_data['name']
+            profile.bio=form.cleaned_data['bio']
+            profile.picture = form.cleaned_data['picture_Main_pic']
+            profile.save()
         return redirect('picturesToday')
 
     else:
         form = ProfileForm()
     return render(request, 'profile.html', {"form": form})
 
+
+
+@login_required(login_url='/accounts/login/')
+def profile_view(request):
+
+    current_user = request.user
+    current_user.id
+    profile = Profile.objects.all()
+    return render(request, 'profile_view.html',{"profile":profile})
+
+
+@login_required(login_url='/accounts/login/')
+def addpicture(request):
+
+    current_user = request.user
+    current_user.id
+    pictures = Picture.objects.all()
+    return render(request, 'addpicture.html',{"pictures":pictures})
+
+
+
 def search_results(request):
 
-    if 'category' in request.GET and request.GET["category"]:
-        name = request.GET.get("category")
-        searched_categories = Picture.search_by_category(name)
-        message = f"{name}"
+    if 'name' in request.GET and request.GET["name"]:
+        search_term = request.GET.get("name")
+        searched_pictures = Picture.search_by_name(search_term)
+        message = f"{search_term}"
 
-        return render(request, 'all-pictures/search.html',{"message":message,"categories": searched_categories})
+        return render(request, 'all-pictures/search.html',{"message":message,"pictures": searched_pictures})
 
     else:
         message = "You haven't searched for any term"
