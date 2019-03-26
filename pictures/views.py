@@ -59,3 +59,16 @@ def newpicture(request):
         form = ProfileForm()
     return render(request, 'profile.html', {"form": form})
 
+def search_results(request):
+
+    if 'category' in request.GET and request.GET["category"]:
+        name = request.GET.get("category")
+        searched_categories = Picture.search_by_category(name)
+        message = f"{name}"
+
+        return render(request, 'all-pictures/search.html',{"message":message,"categories": searched_categories})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'all-pictures/search.html',{"message":message})
+
