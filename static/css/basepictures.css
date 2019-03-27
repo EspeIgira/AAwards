@@ -63,11 +63,13 @@ align-items: flex-end;
   float:left;
 }
 .comment img{
-  padding-left:30px;
-  border-radius:20px;
-}
-.comment li{
   float:left 20px;
+  padding-left:10px;
+  border-radius:30px;
+}
+.comment a{
+  float:left 50px;
+ 
   border-radius:20px;
 }
 h3{
