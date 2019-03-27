@@ -30,15 +30,27 @@ div h3{
   margin-left:-30px;
   color:whitesmoke;
 }
-.profile{
+.profile1{
   border-radius:15px;
   /* border:1px solid whitesmoke;  */
   margin-left:400px;
   margin-right:400px; 
-  
+ 
 }
-.profile h3{
-float:left;
+.profile1 h3{
+  margin-left:40px;
+ 
+ 
+}
+.profile h2{
+color:whitesmoke;
+}
+.profile h1{
+  margin-left:400px;
+  margin-right:400px;
+}
+.profile a img{
+align-items: flex-end;
 }
 
 .posts{
@@ -50,10 +62,17 @@ float:left;
 .comment{
   float:left;
 }
+.comment img{
+  padding-left:30px;
+  border-radius:20px;
+}
 .comment li{
   float:left 20px;
   border-radius:20px;
 }
 h3{
   color:whitesmoke;
+}
+.details a{
+ color:whitesmoke;
 }
