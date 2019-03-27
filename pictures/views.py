@@ -88,13 +88,13 @@ def profile_view(request):
     return render(request, 'profile_view.html',{"profile":profile})
 
 
-@login_required(login_url='/accounts/login/')
-def addpicture(request):
+# @login_required(login_url='/accounts/login/')
+# def addpicture(request):
 
-    current_user = request.user
-    current_user.id
-    pictures = Picture.objects.all()
-    return render(request, 'addpicture.html',{"pictures":pictures})
+#     current_user = request.user
+#     current_user.id
+#     pictures = Picture.objects.all()
+#     return render(request, 'addpicture.html',{"pictures":pictures})
 
 
 

@@ -12,7 +12,7 @@ urlpatterns=[
     url(r'^profile/',views.picture,name ='profile'),
     url(r'^view/profile$', views.profile_view, name='profile_view'),
     # url(r'^picture/',views.picture,name ='picture'),
-    url(r'^picture/',views.addpicture,name ='addpicture'),
+    # url(r'^picture/',views.addpicture,name ='addpicture'),
     url(r'^new/profile$', views.newprofile, name='newprofile'),
     
     url(r'^picture/(\d+)',views.picture,name ='picture'),
