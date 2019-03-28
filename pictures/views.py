@@ -6,6 +6,7 @@ from django.http  import HttpResponse,Http404,HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .forms import PictureForm,ProfileForm, SignUpForm
 from .models import Picture, Profile
+from .email import send_welcome_email
 
 
 # def instagram(request):
@@ -30,6 +31,7 @@ def pictures_of_day(request):
             bio=HTMLField()
             recipient = SignUpRecipients(name = name,profilepic =profilepic,bio=bio)
             recipient.save()
+            send_welcome_email(name,email)
             HttpResponseRedirect('pictures_today')
     else:
         form = SignUpForm()
