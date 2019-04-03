@@ -1,4 +1,4 @@
-#!/home/wecode/EspeRepository/instagramclone/virtual/bin/python
+#!/home/wecode/EspeRepository/AAwards/virtual/bin/python
 from django.core import management
 
 if __name__ == "__main__":

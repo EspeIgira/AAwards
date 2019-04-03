@@ -1,0 +1,23 @@
+{%extends 'all-projects/base.html'%}
+
+{% block content %}
+
+<div class="profile">
+<div class="container">
+
+  <div class="row">
+      {% for prof in profile%}
+    <h2 class="text-center">{{prof.name}}</h2><br><br>
+    <center><img src="{{ prof.picture_Main_pic.url }}" style="border-radius:15px;" class="pic-responsive pic" alt="Picture" width="400" height="400"><br></center>
+    <h3 class="text-center">{{prof.bio}}</h3><br>
+    
+    {% endfor %} 
+    
+  </div>
+</div>
+</div>
+
+{% endblock %}
+
+
+

@@ -1,0 +1,128 @@
+h1
+{
+  color: white;
+}
+.nav{
+  background-color:white;
+}
+/* body{
+   background-color:rgb(204, 102, 153); 
+  
+} */
+.background{
+  background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_D6j-Dg1vihU3yViHe8Z0KQ8mTmlQBgjMh4P3VTg5cdvB9WKz");
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-origin: content-box;
+}
+
+.background h1{
+  margin-right:12px;
+}
+
+/* body h1{
+  border-radius:15px;
+  border:1px solid whitesmoke;
+  /* margin-left:1000px;
+  margin-right:1000px; 
+  
+} */
+.sign{
+  
+}
+.panel{
+  border-radius:20px;
+  border:1px solid whitesmoke;
+}
+div h3{
+ 
+  padding:20px; 
+}
+
+.sign{
+  border-radius:15px;
+  border:1px solid whitesmoke;
+  margin-left:-30px;
+  color:whitesmoke;
+}
+.style{
+margin-right:700px;
+margin-left:700px;
+}
+.profile1{
+  border-radius:15px;
+  /* border:1px solid whitesmoke;  */
+}
+.profile1 h3{
+  margin-left:40px;
+  
+ 
+}
+.profile1 h2{
+  color:whitesmoke;
+}
+.rating{
+  color:orange;
+}
+.detail{
+  margin-left:20px;
+}
+
+
+.profile h2{
+color:whitesmoke;
+}
+.profile h1{
+  margin-left:400px;
+  margin-right:400px;
+  color:whitesmoke;
+}
+/* .profile a img{
+align-items: flex-end;
+
+} */
+
+/* .profile img{
+  align-items: flex-end;
+  
+  } */
+
+.posts{
+  color:whitesmoke;
+}
+.addpost{
+  
+}
+.comment{
+  float:left;
+  margin-left:46px;
+  
+}
+.comment h3{
+  float:left;
+  color:black;
+}
+.comment img{
+  float:left 20px;
+  padding-left:10px;
+  border-radius:30px;
+}
+.comment a{
+  float:left 50px;
+ 
+  border-radius:20px;
+}
+h3{
+  color:whitesmoke;
+}
+.details a{
+ color:whitesmoke;
+}
+.click{
+  
+  border-radius:20px;
+}
+.click img {
+  padding:20px;
+  border-radius:20px;
+}

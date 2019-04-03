@@ -1,0 +1,30 @@
+{%extends 'all-projects/base.html'%}
+
+{% block content %}
+{% if project %}
+
+<div class="row">
+      {% for project in project %}
+      <div class="click">
+      
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                  <center>
+                  <img src="{{ project.picture_Main_pic.url }}" class="proj-responsive proj border-radius:15px;" alt="Project" width="300" height="300">
+   
+
+     <h2 class="text-center"> {{ project.title }} </h2><br>
+     <h3 class="text-center"> {{ project.description }} </h3><br> 
+     
+     <h2 class="text-center">{{ project.picture_Main_pic.url }}</h2><br>
+
+</center>
+      
+
+  {% endfor %}
+</div>
+
+{% endif %}
+ </div>
+
+ {% endblock %}
+ 
