@@ -5,6 +5,7 @@
 {% block content %} 
 {{ block.super}}
 
+
 <div class="container">
 
   <!-- Looping through   -->
@@ -40,6 +41,9 @@
 </div>  
 <br>
 
+{% endblock %}
+{% block scripts %} {{block.super}}
+  <script type="text/javascript" src="{%static 'js/projectspost.js'%}"></script>
 {% endblock %}
 
 

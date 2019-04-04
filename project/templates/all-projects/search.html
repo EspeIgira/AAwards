@@ -14,11 +14,11 @@
   <div class="row">
 
   {% if projects %}
-    {% for project in projects %}
+    {% for proj in project %}
       <div class="col-sm-6 col-md-3 search text-center" >
           <h1>{{project.title}}</h1>
           
-          <img src="{{ project.picture_Main_pic.url }}" class="proj-responsive proj" alt="Project" >
+          <img src="{{ proj.picture_Main_pic.url }}" class="proj-responsive proj" alt="Project" >
           <br><br><br>
       </div>
     {% endfor %}
@@ -26,3 +26,5 @@
   </div>
 </div>
 {% endblock %}
+
+

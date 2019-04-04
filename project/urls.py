@@ -14,6 +14,7 @@ urlpatterns=[
     url(r'^project/(\d+)',views.project,name ='project'),#project ##
     url(r'^new/project$', views.newproject, name='newproject'),#new project ##
     url(r'^view/project$',views.detailsproject,name ='detailsproject'),#details project ##
+    url(r'^ajax/projects_today/$', views.projects_today, name='projects_today')
 
 ]
 

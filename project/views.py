@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import ProjectForm,ProfileForm, SignUpForm
 from .models import Project, Profile
 from .email import send_welcome_email
-
+from django.http import JsonResponse
 
 
 @login_required(login_url='/accounts/login/')
@@ -37,7 +37,6 @@ def projects_of_day(request):
         form = SignUpForm()
   
     return render(request, 'all-projects/todays-projects.html', {"date": date,"project":project,"signupForm":form})
-
 
 
 def profile(request,profile_id):
@@ -96,8 +95,22 @@ def newproject(request):
         form = ProjectForm()
     return render(request, 'displayproject.html', {"form": form})
 
+def projects_today(request):
+    date = dt.date.today()
+    projects = Project.todays_projects()
+    form = ProjectForm()
+    return render(request, 'all-projects/todays-projects.html', {"date": date, "projects": projects, "ProjectForm": form})
 
 
+def projectspost(request):
+    name = request.POST.get('your_name')
+    email = request.POST.get('email')
+
+    recipient = NewsLetterRecipients(name=name, email=email)
+    recipient.save()
+    send_welcome_email(name, email)
+    data = {'success': 'You have been successfully added to mailing list'}
+    return JsonResponse(data)
 
 
 @login_required(login_url='/accounts/login/')

@@ -2,38 +2,72 @@
 
 {% block content %}
 <div class="background">
-<div class="row">
-  
-        {% for prof in profile %}
+    <div class="row">
+      
+      {% for prof in profile %}
 
-        <center><h1>Aawrds</h1></center>
-             <div class="profile1">
-                <!-- <center><h1>EspeI</h1></center> -->
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <center>
-    
-                    
-                    <h3 class="text-center"> {{ project.name }}</h3><br>
-                
-                <div class="style">
-                    
-                <border><img src="{{ prof.picture_Main_pic.url }}" style="border-radius:15px;" class="pic-responsive pic" alt="Project" width="400" height="400"></center></border>
-                <!-- <h2 class="text-center">{{prof.name}}</h2> --><br><br>
-              </div>
+      <center><h1>Aawards</h1></center>
+            <div class="profile1">
+              <!-- <center><h1>EspeI</h1></center> -->
+              <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                  <center>
+
+                  
+                  <h3 class="text-center"> {{ project.name }}</h3><br>
+              
+              <div class="style">
+                  
+              <border><img src="{{ prof.picture_Main_pic.url }}" style="border-radius:15px;" class="pic-responsive pic" alt="Project" width="400" height="400"></center></border>
+              <!-- <h2 class="text-center">{{prof.name}}</h2> --><br><br>
             </div>
-              </div>
-        
+          </div>
+    </div>
+      <div class="box-bl">
+          <center><a style="background-color:azure; border-radius:10%" href="https://www.bitrix24.com/tools/tasks_and_projects/?gclid=EAIaIQobChMIoK7zvfS14QIVNDPTCh0POw8qEAAYASAAEgLd2vD_BwE" data-slug="project-website" class="js-visit-site bt-default green-fill" target="_blank" rel="noopener nofollow">Visit Site</a></center>
 
+      </div>
+             
     {% endfor %}
     <div class="box-content">
       <div class="rating">
         <center>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star"></span>
         <span class="fa fa-star"></span>
+        <p>4.1 average on 10 reviews.</p>
+        <hr style="border:3px solid #f1f1f1">
+        <div class="row">
+          <div class="side">
+            <div>5 star</div>
+          </div>
+          <div class="middle">
+          <div class="bar-container">
+            <div class="bar-5"></div>
+          </div>
+        </div>
+        <div class="middle">
+          <div class="bar-container">
+            <div class="bar-5"></div>
+          </div>
+        </div>
+        <div class="side right">
+          <div>9</div>
+        </div>
+        <div class="side">
+          <div>2 star</div>
+        </div>
+        <div class="middle">
+          <div class="bar-container">
+            <div class="bar-4"></div>
+          </div>
+        </div>
+        <div class="side right">
+          <div>6</div>
+        </div>
       </center>
     </div>
   </div>
@@ -46,7 +80,7 @@
           
       <div ><br>
        
-        <img src="{{ proj.picture_Main_pic.url }}" style="border-radius:15px;" class="pic-responsive pic" alt="Project" width="400" height="400">
+        <img src="{{ proj.picture_Main_pic.url }}" style="border-radius:15px;" class="pic-responsive pic" alt="Project" width="300" height="300">
    
           <div class="detail">
             <h4><b>Project</b></h4> 
@@ -64,8 +98,13 @@
       {% empty %}
       
       {% endfor %}
-      
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <center>
+      <strong><p>The aawards for Projects</p></strong> 
+      <a href="https://twitter.com/pmarticles?lang=en"><i class="fa fa-twitter" style="font-size:48px;color:orangered"></i></a>
+      <a href="https://www.facebook.com/projectmanagementinformation/"><i class="fa fa-facebook" style="font-size:48px;color:orangered"></i></a>
+      <a href="https://github.com/marketplace/category/project-management"><i class="fa fa-github" style="font-size:48px;color:orangered"></i> </a>
+    </center>
       {% endblock %}
      
-      
       
