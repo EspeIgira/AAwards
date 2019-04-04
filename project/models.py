@@ -67,14 +67,19 @@ class Project(models.Model):
 
     
     
-@classmethod
-def search_by_title(cls,search_term):
-    title = Project.objects.filter(title__icontains=search_term).all()
-    projects=None
-    for i in title:
-        print(i)
-        projects=cls.objects.filter(title=i.id)
-    return projects
+# @classmethod
+# def search_by_title(cls,search_term):
+#     title = Project.objects.filter(title__icontains=search_term).all()
+#     projects=None
+#     for i in title:
+#         print(i)
+#         projects=cls.objects.filter(title=i.id)
+#     return projects
+
+    @classmethod
+    def search_title(cls,search_term):
+            titles = cls.objects.filter(title__icontains=search_term).all()
+            return titles
 
 
 class Meta:

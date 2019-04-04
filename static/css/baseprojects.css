@@ -169,3 +169,17 @@ h3 {
   background-size:cover;
   background-origin: content-box;
 }
+.search h1{
+  color:whitesmoke;
+  
+}
+.search img{
+  border-radius:15px;
+}
+.search{
+  background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_D6j-Dg1vihU3yViHe8Z0KQ8mTmlQBgjMh4P3VTg5cdvB9WKz");
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-origin: content-box;
+  text-align:center;
+}

@@ -34,6 +34,7 @@ def projects_of_day(request):
             title = form.cleaned_data['your_title']
             description = form.cleaned_data['description']
             link = form.cleaned_data['link']
+            # picture_Main_pic= form.cleaned_data['picture_Main_pic']
             recipient = SignUpRecipients(title = title,description = description,link=link)
             recipient.save()
             send_welcome_email(name,email)
@@ -127,21 +128,25 @@ def detailsproject(request):
     return render(request, "detailsproject.html",{"project":project})
 
 
-
+#search----------------------------------------------------------------------------------------------------------------------
 
 def search_results(request):
 
-    if 'projectname' in request.GET and request.GET["projectname"]:
-        search_term = request.GET.get("projectname")
-        searched_projects = project.search_by_title(search_term)
+    if 'title' in request.GET and request.GET["title"]:
+        search_term = request.GET.get("title")
+        titles = Project.search_title(search_term)
         message = f"{search_term}"
 
-        return render(request, 'all-projects/search.html',{"message":message,"projects": searched_projects})
+        return render(request, 'all-projects/search.html',{"message":message,"titles": titles})
 
     else:
         message = "You haven't searched for any term"
         return render(request, 'all-projects/search.html',{"message":message})
 
+
+
+
+#postman------------------------------------------------------------------------------------------------------------------------------
 
 class MerchList(APIView):
     def get(self, request, format=None):
