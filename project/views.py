@@ -5,7 +5,7 @@ from django.shortcuts import render,redirect
 from django.http  import HttpResponse,Http404,HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from .forms import ProjectForm,ProfileForm, SignUpForm
-from .models import Project, Profile
+from .models import Project, Profile,Vote
 from .email import send_welcome_email
 from django.http import JsonResponse
 from rest_framework.response import Response
@@ -13,6 +13,8 @@ from rest_framework.views import APIView
 from .serializer import ProjectSerializer
 from rest_framework import status
 from .permissions import IsAdminOrReadOnly
+from django.views import generic
+
 
 
 @login_required(login_url='/accounts/login/')

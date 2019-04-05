@@ -91,3 +91,7 @@ class SignUpRecipients(models.Model):
     email = models.EmailField()
 
 
+class Vote(models.Model):
+    votes = models.IntegerField(default=0)
+    project = models.ForeignKey(User,on_delete=models.CASCADE)
+

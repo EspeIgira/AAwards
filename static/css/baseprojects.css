@@ -1,6 +1,7 @@
-h1
+h3
 {
   color: white;
+  font-family:
 }
 .nav{
   background-color:white;
@@ -16,8 +17,9 @@ h1
   background-origin: content-box;
 }
 
-.background h1{
+.background h3{
   margin-right:12px;
+  font-family:italic;
 }
 
 /* body h1{
@@ -61,6 +63,7 @@ margin-left:700px;
 }
 .profile1 img{
   border-radius: 50%;
+  margin-top:-30px;
 }
 .profile1 h2{
   color:whitesmoke;
@@ -104,7 +107,7 @@ align-items: flex-end;
 }
 .comment{
   float:left;
-  margin-left:46px;
+  margin-left:120px;
   
 }
 .comment h3{
@@ -155,13 +158,13 @@ h3{
 }
  h2 {
   color:whitesmoke;
-  float:left ;
+  /* float:left ; */
   
 }
 h3 {
   color:whitesmoke;
 
-  float:left ;
+  /* float:left ; */
 }
 .login form{
   background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_D6j-Dg1vihU3yViHe8Z0KQ8mTmlQBgjMh4P3VTg5cdvB9WKz");

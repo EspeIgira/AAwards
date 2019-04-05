@@ -1,12 +1,12 @@
 {%extends 'all-projects/base.html'%}
-
 {% block content %}
+{% load staticfiles %}
 <div class="background">
     <div class="row">
       
       {% for prof in profile %}
 
-      <center><h1>Aawards</h1></center>
+      <center><h3 style="font-family:'Arial, sans-serif,'italic;">The Aawards of design, creativity and innovation on the internet</h3></center>
             <div class="profile1">
               <!-- <center><h1>EspeI</h1></center> -->
               <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -23,7 +23,7 @@
           </div>
     </div>
       <div class="box-bl">
-          <center><a style="background-color:azure; border-radius:10%" href="https://www.bitrix24.com/tools/tasks_and_projects/?gclid=EAIaIQobChMIoK7zvfS14QIVNDPTCh0POw8qEAAYASAAEgLd2vD_BwE" data-slug="project-website" class="js-visit-site bt-default green-fill" target="_blank" rel="noopener nofollow">Visit Site</a></center>
+          <center><a style="background-color:azure; border-radius:10%" href="https://www.bitrix24.com/tools/tasks_and_projects/?gclid=EAIaIQobChMIoK7zvfS14QIVNDPTCh0POw8qEAAYASAAEgLd2vD_BwE" data-slug="project-website" class="js-visit-site bt-default green-fill" target="_blank" rel="noopener nofollow"><strong>Visit Site</strong></a></center>
 
       </div>
              
@@ -38,7 +38,7 @@
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star"></span>
         <span class="fa fa-star"></span>
-        <p>4.1 average on 10 reviews.</p>
+        <p>Rating: 4.1 average on 10 reviews.</p>
         <hr style="border:3px solid #f1f1f1">
         <div class="row">
           <div class="side">
@@ -71,11 +71,10 @@
       </center>
     </div>
   </div>
-  
+  <hr style="border:3px solid #f1f1f1">
   <h3>Project Post</h3>
   {% for proj in project %}
-  
-     
+
       <div class="comment">
           
       <div ><br>
